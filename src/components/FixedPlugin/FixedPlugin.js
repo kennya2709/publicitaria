@@ -33,7 +33,6 @@ function FixedPlugin(props) {
    
       <div className={classes}>
         <div onClick={handleClick}>
-          <i className="fa fa-cog fa-2x" />
         </div>
         
       </div>

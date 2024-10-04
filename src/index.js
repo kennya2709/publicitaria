@@ -24,6 +24,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import "assets/scss/paper-dashboard.scss?v=1.3.0";
 import "assets/demo/demo.css";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
+import Inicio from "views/Inicio";
+
 
 import AdminLayout from "layouts/Admin.js";
 
@@ -33,7 +35,7 @@ root.render(
   <BrowserRouter>
     <Switch>
       <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-      <Redirect to="/admin/dashboard" />
+      <Redirect to="/admin/Inicio" />
     </Switch>
   </BrowserRouter>
 );

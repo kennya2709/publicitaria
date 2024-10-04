@@ -1,6 +1,6 @@
 .contact-form-container {
     max-width: 500px; /* Ancho máximo del formulario */
-    margin: 180px auto; /* Aumentar el margen superior para bajar la tarjeta el triple */
+    margin: 100px auto; /* Aumentar el margen superior para bajar la tarjeta el triple */
     padding: 20px; /* Espaciado interno */
     border: 1px solid #ddd; /* Bordes suaves */
     border-radius: 10px; /* Bordes redondeados */
@@ -20,15 +20,16 @@
   @media (max-width: 768px) {
     .contact-form-container {
       padding: 15px; /* Menos espaciado en pantallas más pequeñas */
+      margin: 30px;
+      margin-top: 100px;
     }
   }
-  
-  
-  
   
   @media (max-width: 768px) {
     .contact-form-container {
       padding: 15px; /* Menos espaciado en pantallas más pequeñas */
+      margin: 30px;
+      margin-top: 100px;
     }
   }
   
