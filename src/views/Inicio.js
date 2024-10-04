@@ -14,6 +14,7 @@ import {
   Col,
   Button
 } from "reactstrap";
+import "./Dashboard.css"; // Asegúrate de tener este archivo para los estilos
 
 function Dashboard() {
   const [videoVisible, setVideoVisible] = useState(false);
@@ -21,15 +22,14 @@ function Dashboard() {
 
   // Función para mostrar el video y reproducirlo
   const toggleVideo = () => {
-    setVideoVisible(!videoVisible);
-    if (!videoVisible) {
-      // Si el video se muestra, comenzará a reproducirse automáticamente
-      setTimeout(() => {
-        if (videoRef.current) {
-          videoRef.current.play();
-        }
-      }, 100); // pequeño retraso para asegurarse de que el video esté montado
-    }
+    setVideoVisible((prevVisible) => !prevVisible);
+    setTimeout(() => {
+      if (videoRef.current && videoVisible) {
+        videoRef.current.pause();
+      } else if (videoRef.current) {
+        videoRef.current.play();
+      }
+    }, 100); // pequeño retraso para asegurarse de que el video esté montado
   };
 
   return (
@@ -64,23 +64,30 @@ function Dashboard() {
                     </Button>
                   </div>
                   {/* Mostrar video solo si videoVisible es true */}
-                  {videoVisible && (
-                    <div className="d-block d-md-none mt-3">
+                  <div className={`video-container d-block d-md-none mt-3 ${videoVisible ? 'fade-in' : 'fade-out'}`}>
+                    {videoVisible && (
                       <video
-                        ref={vid1}
+                        ref={videoRef}
                         src={vid1}
                         muted
                         loop
                         controls
-                        width="100%"
+                        style={{ width: "100%", maxWidth: "400px" }}
                       >
                         Tu navegador no soporta videos.
                       </video>
-                    </div>
-                  )}
+                    )}
+                  </div>
                   {/* Video siempre visible en pantallas grandes */}
                   <div className="d-none d-md-block">
-                    <video src={vid1} autoPlay muted loop controls width="100%">
+                    <video
+                      src={vid1}
+                      autoPlay
+                      muted
+                      loop
+                      controls
+                      style={{ width: "100%", maxWidth: "400px" }}
+                    >
                       Tu navegador no soporta videos.
                     </video>
                   </div>
