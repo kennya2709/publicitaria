@@ -1,0 +1,34 @@
+.contact-form-container {
+    max-width: 500px; /* Ancho máximo del formulario */
+    margin: 180px auto; /* Aumentar el margen superior para bajar la tarjeta el triple */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Bordes suaves */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo claro */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  .contact-form-container h4 {
+    margin-bottom: 20px; /* Espacio debajo del título */
+    text-align: center; /* Centrar texto */
+  }
+  
+  .form-group {
+    margin-bottom: 15px; /* Espaciado entre grupos de formulario */
+  }
+  
+  @media (max-width: 768px) {
+    .contact-form-container {
+      padding: 15px; /* Menos espaciado en pantallas más pequeñas */
+    }
+  }
+  
+  
+  
+  
+  @media (max-width: 768px) {
+    .contact-form-container {
+      padding: 15px; /* Menos espaciado en pantallas más pequeñas */
+    }
+  }
+  
